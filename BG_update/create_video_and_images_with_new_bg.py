@@ -3,7 +3,7 @@ import os
 from cvzone.SelfiSegmentationModule import SelfiSegmentation
 
 # https://www.analyticsvidhya.com/blog/2021/07/learn-how-to-do-real-time-background-replacement-using-opencv-and-cvzone/
-video_name = "123"
+video_name = "converted"
 video = cv2.VideoCapture(video_name + ".mp4")
 new_video_name = video_name + "_new"
 
