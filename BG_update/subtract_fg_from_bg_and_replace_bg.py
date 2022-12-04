@@ -15,7 +15,7 @@ removed_image_folder = "remove_" + image_folder
 new_video_name = image_folder + "_new_2.mp4"
 
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-video_writer = cv2.VideoWriter(new_video_name, fourcc, 30, (w, h))
+video_writer = cv2.VideoWriter(new_video_name, fourcc, 24, (w, h))
 
 new_img_bg = cv2.imread("bg_from_video.jpg")
 new_img_bg = cv2.resize(new_img_bg, (w, h))
@@ -23,7 +23,7 @@ new_img_bg = cv2.resize(new_img_bg, (w, h))
 if not os.path.exists(removed_image_folder):
     os.makedirs(removed_image_folder)
 
-for i in range(len(os.listdir(image_folder))):
+for i in range(1, len(os.listdir(image_folder))):
     image_file = str(i) + '.png'
     path = os.path.join(image_folder, image_file)
     original_frame = cv2.imread(path)

@@ -10,7 +10,7 @@ image = cv2.imread(path)
 h, w, depth = image.shape
 
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-video_writer = cv2.VideoWriter(new_video_name, fourcc, 30, (w, h))
+video_writer = cv2.VideoWriter(new_video_name, fourcc, 24, (w, h))
 
 if not os.path.exists('result_' + folder_name):
     os.makedirs('result_' + folder_name)
@@ -19,7 +19,7 @@ segmentor = SelfiSegmentation()
 
 imgBG = cv2.imread("bg_from_video.jpg")
 
-for i in range(len(os.listdir(folder_name))):
+for i in range(1, len(os.listdir(folder_name))):
     fileName = str(i) + '.png'
     path = os.path.join(folder_name, fileName)
     frame = cv2.imread(path)
