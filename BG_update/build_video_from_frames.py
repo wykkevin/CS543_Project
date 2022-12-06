@@ -1,10 +1,10 @@
 import cv2
 import os
 
-folder_name = "converted_images"
+folder_name = "remove_train_img"
 new_video_name = folder_name + "_video.mp4"
 
-path = os.path.join(folder_name, "1.png")
+path = os.path.join(folder_name, "frame000001.png")
 image = cv2.imread(path)
 h, w, depth = image.shape
 
@@ -15,7 +15,10 @@ if not os.path.exists('result_' + folder_name):
     os.makedirs('result_' + folder_name)
 
 for i in range(1, len(os.listdir(folder_name))):
-    fileName = str(i) + '.png'
+    index = str(i)
+    while len(index) < 6:
+        index = '0' + index
+    fileName = 'frame' + index + '.png'
     path = os.path.join(folder_name, fileName)
     frame = cv2.imread(path)
 

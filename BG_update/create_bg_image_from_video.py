@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import scipy
 
-videoname = "converted_images_video"
+videoname = "train_img_video"
 c = cv2.VideoCapture(videoname + ".mp4")
 r_medstack = []
 g_medstack = []
